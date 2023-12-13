@@ -1,0 +1,188 @@
+classdef MyCobot
+    %MYCOBOT Summary of this class goes here
+    %   Detailed explanation goes here
+
+    properties
+        Sp
+    end
+
+    methods
+        function obj = MyCobot(port,baudrate)
+            %MYCOBOT Construct an instance of this class
+            %   Detailed explanation goes here
+
+            %             obj.Sp = serialport(port,baudrate);
+            obj.Sp.port = "COM11";
+            obj.Sp.baudrate = 11520;
+        end
+
+        %% Overall Status
+        function [] = power_on(obj)
+            %power_on Summary of this method goes here
+            %   Detailed explanation goes here
+            fprintf('send power_on cmd to %s\n', obj.Sp.port);
+        end
+
+        function [] = power_off(obj)
+            fprintf('send power_off cmd to %s\n', obj.Sp.port)
+        end
+
+        function status = is_power_on(obj)
+            fprintf('send is_power_on cmd to %s\n', obj.Sp.port)
+            status = 1;
+        end
+
+        function [] = release_all_servos(obj)
+            fprintf('send release_all_servos cmd to %s\n', obj.Sp.port)
+        end
+
+        function status = is_controller_connected(obj)
+            fprintf('send power_off cmd to %s\n', obj.Sp.port)
+            status = 1;
+        end
+
+        %% Operating Mode
+        function [] = pause(obj)
+            fprintf('send pause cmd to %s\n', obj.Sp.port)
+        end
+
+        function [] = stop(obj)
+            fprintf('send stop cmd to %s\n', obj.Sp.port)
+        end
+        
+        function [] = resume(obj)
+            fprintf('send resume cmd to %s\n', obj.Sp.port)
+        end
+
+        function status = is_paused(obj)
+            fprintf('send is_paused cmd to %s\n', obj.Sp.port)
+            status = 1;
+        end
+
+        function speed = get_speed(obj)
+            speed = 100;
+            fprintf('send get_speed cmd to %s\n', obj.Sp.port)
+        end
+
+        function [] = set_speed(obj, speed)
+            fprintf('send set_speed cmd to %s\n', obj.Sp.port)
+        end
+
+        function angle = get_joint_min_angle(obj, joint_id)
+            angle = 90;
+            fprintf('send get_joint_min_angle cmd to %s\n', obj.Sp.port)
+        end
+
+        function angle = get_joint_max_angle(obj, joint_id)
+            angle = 90;
+            fprintf('send get_joint_max_angle cmd to %s\n', obj.Sp.port)
+        end
+
+        function status = is_servo_enable(obj, servo_id)
+            status = 1;
+            fprintf('send is_servo_enable cmd to %s\n', obj.Sp.port)
+        end
+
+        function status = is_all_servo_enable(obj)
+            status = 1;
+            fprintf('send is_all_servo_enable cmd to %s\n', obj.Sp.port)
+        end
+
+        function status = release_servo(obj, servo_id)
+            status = 1;
+            fprintf('send release_servo cmd to %s\n', obj.Sp.port)
+        end
+
+        function dis = get_tof_distance(obj)
+            dis = 1;
+            fprintf('send get_tof_distance cmd to %s\n', obj.Sp.port)
+        end
+
+        function error = get_error_information(obj)
+            error = 1;
+            fprintf('send get_error_information cmd to %s\n', obj.Sp.port)
+        end
+
+        function [] = clear_error_information(obj)
+            fprintf('send clear_error_information cmd to %s\n', obj.Sp.port)
+        end
+
+        %% MDI Mode
+        function [j1, j2, j3, j4, j5, j6] = get_angles(obj)
+            j1 = 90;
+            j2 = 90;
+            j3 = 90;
+            j4 = 90;
+            j5 = 90;
+            j6 = 90;
+            fprintf('send get_angles cmd to %s\n', obj.Sp.port)
+        end
+
+        function [] = send_angle(obj, joint_id, degree, speed)
+            fprintf('send send_angle cmd to %s\n', obj.Sp.port)
+        end
+        
+        function [] = send_angles(obj, degrees, speed)
+            fprintf('send send_angle cmd to %s\n', obj.Sp.port)
+        end
+
+        function [x, y, z, rx, ry, rz] = get_coords(obj)
+            fprintf('send get_coords cmd to %s\n', obj.Sp.port)
+        end
+
+        function [] = send_coord(obj, coord_id, coord, speed)
+            fprintf('send send_coord cmd to %s\n', obj.Sp.port)
+        end
+
+        function [] = send_coords(obj, coords, speed, mode)
+            fprintf('send send_coords cmd to %s\n', obj.Sp.port)
+        end
+
+        function [e1, e2, e3, e4, e5, e6] = get_encoders(obj)
+            fprintf('send get_encoders cmd to %s\n', obj.Sp.port)
+        end
+
+        function e = get_encoder(obj, joint_id)
+            fprintf('send get_encoder cmd to %s\n', obj.Sp.port)
+        end
+
+        function [r1, r2, r3, r4, r5, r6] = get_radians(obj)
+            fprintf('send get_radians cmd to %s\n', obj.Sp.port)
+        end
+
+        function [] = send_radians(obj, radians, speed)
+            fprintf('send send_radians cmd to %s\n', obj.Sp.port)
+        end
+
+        function [] = sync_send_angles(obj, degrees, speed, timeout)
+            fprintf('send sync_send_angles cmd to %s\n', obj.Sp.port)
+        end
+
+        function [] = sync_send_coords(obj, coords, speed, mode, timeout)
+            fprintf('send sync_send_coords cmd to %s\n', obj.Sp.port)
+        end
+
+        function status = is_in_position(obj, data, flag)
+            status = 1;
+            fprintf('send is_in_position cmd to %s\n', obj.Sp.port)
+        end
+
+        function status = is_moving(obj)
+            fprintf('send is_moving cmd to %s\n', obj.Sp.port)
+        end
+
+        function [] = set_color(obj, r, g, b)
+            fprintf('send set_color cmd to %s\n', obj.Sp.port)
+        end
+
+%         function [r1, r2, r3, r4, r5, r6] = get_radians(obj)
+%             fprintf('send get_radians cmd to %s\n', obj.Sp.port)
+%         end
+% 
+%         function [] = send_radians(obj, radians, speed)
+%             fprintf('send get_radians cmd to %s\n', obj.Sp.port)
+%         end
+        
+        %% JOG Mode
+    end
+end

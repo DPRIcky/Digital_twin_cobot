@@ -1,0 +1,69 @@
+CC     = "C:\Program Files\MATLAB\R2023a\sys\lcc64\lcc64\bin\lcc64.exe"
+LD     = "C:\Program Files\MATLAB\R2023a\sys\lcc64\lcc64\bin\lcclnk64.exe"
+LIBCMD = "C:\Program Files\MATLAB\R2023a\sys\lcc64\lcc64\bin\lcclib64.exe"
+CFLAGS = -w -dll -noregistrylookup  -c -Zp8 -DLCC_WIN64 -DMATLAB_MEX_FILE -nodeclspec-DHAVE_LAPACK_CONFIG_H -DLAPACK_COMPLEX_STRUCTURE -DMW_HAVE_LAPACK_DECLS -Dccd_EXPORTS
+LDFLAGS = -s -dll -L"C:\Program Files\MATLAB\R2023a\sys\lcc64\lcc64\lib64" -entry LibMain -map sfun.map
+LIBFLAGS = 
+
+OBJECTS = \
+	"c_mexapi_version.obj"\
+	"lccstub.obj"\
+	"sm_ik_trajectory_cgxe.obj"\
+	"m_Ip2BSC7RrazEPBoO6KQvJG.obj"\
+	"sm_ik_trajectory_cgxe_registry.obj"\
+	"ccd_ccd.obj"\
+	"ccd_mpr.obj"\
+	"ccd_polytope.obj"\
+	"ccd_vec3.obj"\
+	"collisioncodegen_CollisionGeometry.cpobj"\
+	"collisioncodegen_api.cpobj"\
+	"collisioncodegen_ccdExtensions.cpobj"\
+	"collisioncodegen_checkCollision.cpobj"\
+	"sm_ik_trajectory_cgxe.def"\
+	"C:\Program Files\MATLAB\R2023a\extern\lib\win64\microsoft\libmx.lib"\
+	"C:\Program Files\MATLAB\R2023a\extern\lib\win64\microsoft\libmex.lib"\
+	"C:\Program Files\MATLAB\R2023a\extern\lib\win64\microsoft\libmat.lib"\
+	"C:\Program Files\MATLAB\R2023a\extern\lib\win64\microsoft\libfixedpoint.lib"\
+	"C:\Program Files\MATLAB\R2023a\extern\lib\win64\microsoft\libut.lib"\
+	"C:\Program Files\MATLAB\R2023a\extern\lib\win64\microsoft\libmwmathutil.lib"\
+	"C:\Program Files\MATLAB\R2023a\extern\lib\win64\microsoft\libemlrt.lib"\
+	"C:\Program Files\MATLAB\R2023a\extern\lib\win64\microsoft\libmwcgxert.lib"\
+	"C:\Program Files\MATLAB\R2023a\extern\lib\win64\microsoft\libmwcgxeooprt.lib"\
+	"C:\Program Files\MATLAB\R2023a\extern\lib\win64\microsoft\libmwslexec_simbridge.lib"\
+	"C:\Program Files\MATLAB\R2023a\extern\lib\win64\microsoft\libmwslccrt.lib"\
+	"C:\Program Files\MATLAB\R2023a\extern\lib\win64\microsoft\libmwstringutil.lib"\
+	"C:\Program Files\MATLAB\R2023a\extern\lib\win64\microsoft\libcovrt.lib"\
+	"C:\Program Files\MATLAB\R2023a\extern\lib\win64\microsoft\libmwsl_sfcn_cov_bridge.lib"\
+	"C:\Program Files\MATLAB\R2023a\extern\lib\win64\microsoft\libmwdsp_halidesim.lib"\
+
+INCLUDE_PATH= -I"C:\Program Files\MATLAB\R2023a\extern\include"  -I"C:\Program Files\MATLAB\R2023a\simulink\include"  -I"C:\Program Files\MATLAB\R2023a\rtw\c\src"  -I"C:\Users\chinn\OneDrive\Desktop\YOGA\SEM 1\EGR 545\ass4\cobot3\urdf"  -I"C:\Users\chinn\OneDrive\Desktop\YOGA\SEM 1\EGR 545\ass4\cobot3\urdf\slprj\_cprj"  -I"C:\Program Files\MATLAB\R2023a\sys\lcc64\lcc64\include64"  -I"C:\Users\chinn\OneDrive\Desktop\YOGA\SEM 1\EGR 545\ass4\cobot3\urdf\slprj\_cgxe\sm_ik_trajectory\src"  -I"C:\Program Files\MATLAB\R2023a\extern\include\shared_robotics"  -I"C:\Program Files\MATLAB\R2023a\toolbox\shared\robotics\externalDependency\libccd\src"  -I"C:\Program Files\MATLAB\R2023a\toolbox\shared\robotics\externalDependency\libccd\src\ccd" 
+ 
+
+sm_ik_trajectory_cgxe.mexw64 : $(MAKEFILE) $(OBJECTS)
+	$(LD) $(LDFLAGS) -o sm_ik_trajectory_cgxe.mexw64 @sm_ik_trajectory_cgxe.lmko
+c_mexapi_version.obj :	"C:\Program Files\MATLAB\R2023a\extern\version\c_mexapi_version.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "C:\Program Files\MATLAB\R2023a\extern\version\c_mexapi_version.c"
+lccstub.obj :	"C:\Program Files\MATLAB\R2023a\sys\lcc64\lcc64\mex\lccstub.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "C:\Program Files\MATLAB\R2023a\sys\lcc64\lcc64\mex\lccstub.c"
+sm_ik_trajectory_cgxe.obj :	"sm_ik_trajectory_cgxe.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "sm_ik_trajectory_cgxe.c"
+m_Ip2BSC7RrazEPBoO6KQvJG.obj :	"m_Ip2BSC7RrazEPBoO6KQvJG.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "m_Ip2BSC7RrazEPBoO6KQvJG.c"
+sm_ik_trajectory_cgxe_registry.obj :	"sm_ik_trajectory_cgxe_registry.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "sm_ik_trajectory_cgxe_registry.c"
+ccd_ccd.obj :	"c:\program files\matlab\r2023a\toolbox\shared\robotics\externaldependency\libccd\src\ccd_ccd.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "c:\program files\matlab\r2023a\toolbox\shared\robotics\externaldependency\libccd\src\ccd_ccd.c"
+ccd_mpr.obj :	"c:\program files\matlab\r2023a\toolbox\shared\robotics\externaldependency\libccd\src\ccd_mpr.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "c:\program files\matlab\r2023a\toolbox\shared\robotics\externaldependency\libccd\src\ccd_mpr.c"
+ccd_polytope.obj :	"c:\program files\matlab\r2023a\toolbox\shared\robotics\externaldependency\libccd\src\ccd_polytope.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "c:\program files\matlab\r2023a\toolbox\shared\robotics\externaldependency\libccd\src\ccd_polytope.c"
+ccd_vec3.obj :	"c:\program files\matlab\r2023a\toolbox\shared\robotics\externaldependency\libccd\src\ccd_vec3.c"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "c:\program files\matlab\r2023a\toolbox\shared\robotics\externaldependency\libccd\src\ccd_vec3.c"
+collisioncodegen_CollisionGeometry.obj :	"c:\program files\matlab\r2023a\toolbox\shared\robotics\robotcore\builtins\libsrc\collisioncodegen\collisioncodegen_CollisionGeometry.cpp"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "c:\program files\matlab\r2023a\toolbox\shared\robotics\robotcore\builtins\libsrc\collisioncodegen\collisioncodegen_CollisionGeometry.cpp"
+collisioncodegen_api.obj :	"c:\program files\matlab\r2023a\toolbox\shared\robotics\robotcore\builtins\libsrc\collisioncodegen\collisioncodegen_api.cpp"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "c:\program files\matlab\r2023a\toolbox\shared\robotics\robotcore\builtins\libsrc\collisioncodegen\collisioncodegen_api.cpp"
+collisioncodegen_ccdExtensions.obj :	"c:\program files\matlab\r2023a\toolbox\shared\robotics\robotcore\builtins\libsrc\collisioncodegen\collisioncodegen_ccdExtensions.cpp"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "c:\program files\matlab\r2023a\toolbox\shared\robotics\robotcore\builtins\libsrc\collisioncodegen\collisioncodegen_ccdExtensions.cpp"
+collisioncodegen_checkCollision.obj :	"c:\program files\matlab\r2023a\toolbox\shared\robotics\robotcore\builtins\libsrc\collisioncodegen\collisioncodegen_checkCollision.cpp"
+	$(CC) $(CFLAGS) $(INCLUDE_PATH) "c:\program files\matlab\r2023a\toolbox\shared\robotics\robotcore\builtins\libsrc\collisioncodegen\collisioncodegen_checkCollision.cpp"

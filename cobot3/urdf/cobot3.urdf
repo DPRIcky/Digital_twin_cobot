@@ -1,0 +1,365 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="cobot3">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="-0.00232016170427611 -0.000765606892289066 0.0312786168841254"
+        rpy="0 0 0" />
+      <mass
+        value="0.353079592362671" />
+      <inertia
+        ixx="0.000316043460529038"
+        ixy="1.10699213846399E-06"
+        ixz="3.56238975852151E-07"
+        iyy="0.000275853060470908"
+        iyz="-4.4782378037197E-06"
+        izz="0.000397335833492931" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://cobot3/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.941176470588235 0.941176470588235 0.941176470588235 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://cobot3/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="arm1">
+    <inertial>
+      <origin
+        xyz="-0.00680883134118458 5.04706668380235E-06 0.0427361271303308"
+        rpy="0 0 0" />
+      <mass
+        value="0.0362482761705093" />
+      <inertia
+        ixx="3.14204853252413E-05"
+        ixy="-6.43423216148532E-09"
+        ixz="7.56551874923508E-06"
+        iyy="2.91040059278216E-05"
+        iyz="1.60246138886805E-08"
+        izz="1.50532211800604E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://cobot3/meshes/arm1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.941176470588235 0.941176470588235 0.941176470588235 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://cobot3/meshes/arm1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="arm1_joint"
+    type="continuous">
+    <origin
+      xyz="-0.00241845213874587 0 0.0697000000004628"
+      rpy="0 0 -3.14159265358979" />
+    <parent
+      link="base_link" />
+    <child
+      link="arm1" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="arm2">
+    <inertial>
+      <origin
+        xyz="-0.0330958384335248 -3.84035780758452E-06 0.0516148073914731"
+        rpy="0 0 0" />
+      <mass
+        value="0.0668455233514871" />
+      <inertia
+        ixx="0.00016699911931717"
+        ixy="4.14240033901259E-09"
+        ixz="-5.91386991528367E-07"
+        iyy="0.000158362235625875"
+        iyz="-1.78121580526278E-08"
+        izz="2.06283877923238E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://cobot3/meshes/arm2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.941176470588235 0.941176470588235 0.941176470588235 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://cobot3/meshes/arm2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="arm2_joint"
+    type="continuous">
+    <origin
+      xyz="-0.0254169999999994 0 0.0605300000000008"
+      rpy="0 0 0" />
+    <parent
+      link="arm1" />
+    <child
+      link="arm2" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+  <link
+    name="arm3">
+    <inertial>
+      <origin
+        xyz="0.0204973453112503 1.70655073341349E-07 0.0437225645153907"
+        rpy="0 0 0" />
+      <mass
+        value="0.0533332652028824" />
+      <inertia
+        ixx="0.000101596860219516"
+        ixy="6.19715201019417E-10"
+        ixz="-4.0389306770211E-06"
+        iyy="9.73975049529666E-05"
+        iyz="-8.24534996298816E-09"
+        izz="1.36964308632225E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://cobot3/meshes/arm3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.941176470588235 0.941176470588235 0.941176470588235 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://cobot3/meshes/arm3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="arm3_joint"
+    type="continuous">
+    <origin
+      xyz="0 0 0.11"
+      rpy="0 0 0" />
+    <parent
+      link="arm2" />
+    <child
+      link="arm3" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+  <link
+    name="arm4">
+    <inertial>
+      <origin
+        xyz="-0.0230551919175185 -1.56460424999699E-05 0.00768436024359659"
+        rpy="0 0 0" />
+      <mass
+        value="0.0240644495984215" />
+      <inertia
+        ixx="7.73837847203445E-06"
+        ixy="-1.75914634378234E-09"
+        ixz="3.31021198817931E-06"
+        iyy="9.32588539832337E-06"
+        iyz="-7.9605586261709E-10"
+        izz="7.81920505993916E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://cobot3/meshes/arm4.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.941176470588235 0.941176470588235 0.941176470588235 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://cobot3/meshes/arm4.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="arm4_joint"
+    type="continuous">
+    <origin
+      xyz="-0.00412020971722486 0 0.0960000000000001"
+      rpy="0 0 0" />
+    <parent
+      link="arm3" />
+    <child
+      link="arm4" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+  <link
+    name="arm5">
+    <inertial>
+      <origin
+        xyz="-8.7966263755436E-05 -0.0009192869787677 0.0288733416528603"
+        rpy="0 0 0" />
+      <mass
+        value="0.0314625775760422" />
+      <inertia
+        ixx="1.32874353990497E-05"
+        ixy="-2.58704830135211E-08"
+        ixz="1.3828487204083E-08"
+        iyy="1.33703816598306E-05"
+        iyz="2.99685352454218E-06"
+        izz="8.53017322567244E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://cobot3/meshes/arm5.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.941176470588235 0.941176470588235 0.941176470588235 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://cobot3/meshes/arm5.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="arm5_joint"
+    type="continuous">
+    <origin
+      xyz="-0.0335582307949353 0 0.0348110141897063"
+      rpy="0 0 0" />
+    <parent
+      link="arm4" />
+    <child
+      link="arm5" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="ee">
+    <inertial>
+      <origin
+        xyz="-1.18362049368603E-06 -0.0129921539923426 -3.05724449506384E-06"
+        rpy="0 0 0" />
+      <mass
+        value="0.00770531410204427" />
+      <inertia
+        ixx="8.40243417618165E-07"
+        ixy="-5.3750640596979E-11"
+        ixz="7.42731026044781E-14"
+        iyy="1.35522169215089E-06"
+        iyz="1.31206191585443E-10"
+        izz="8.40608900769456E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://cobot3/meshes/ee.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.941176470588235 0.941176470588235 0.941176470588235 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://cobot3/meshes/ee.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="ee_joint"
+    type="continuous">
+    <origin
+      xyz="0 -0.02616582586857 0.0399381567054393"
+      rpy="0 0 0" />
+    <parent
+      link="arm5" />
+    <child
+      link="ee" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+</robot>
